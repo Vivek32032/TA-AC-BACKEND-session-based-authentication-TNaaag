@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // cookie
 app.use((req,res,next)=>{
   res.cookie('name',"Vivek kumar");
-  console.log(req.cookies.name);
+  console.log(req.cookies);
   next();
 })
 
