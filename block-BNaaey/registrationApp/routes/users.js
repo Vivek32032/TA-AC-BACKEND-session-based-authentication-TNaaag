@@ -27,6 +27,7 @@ router.get('/dashboard', (req, res, next) => {
   console.log(req.session);
   User.findOne({_id: req.session.userId }, (err, user) => {
     if(err) return next(err);
+    console.log(user)
     res.render('dashboard', { user });
   });
 })
