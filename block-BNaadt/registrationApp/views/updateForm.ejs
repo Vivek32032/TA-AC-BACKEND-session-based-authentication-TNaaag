@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Registration Form</title>
+</head>
+<body>
+<%- include('../partials/header') -%>
+    <main>
+        <form action="/users/<%= user.id %>" method="POST" class="w-4/12 p-6 mx-auto bg-blue-500 my-10">
+            <legend class="text-center text-3xl text-white font-bold mb-5">UPDATE USER</legend>
+             <input class="mb-5" type="text" name="name" placeholder="Enter Your Name" required value="<%= user.name %>">
+             <input class="mb-5" type="email" name="email" placeholder="Enter Your Email" required value="<%= user.email %>">
+             <input class="mb-5" type="password" name="password" placeholder="Enter Password" minlength="6" required value="<%= user.password %>">
+             <input class="mb-5" type="number" name="age" placeholder="Enter Your Age" value="<%= user.age %>">
+             <input class="mb-5" type="number" name="phone" placeholder="Enter Your Phone No" value="<%= user.phone %>">
+             <input type="submit" value="SAVE" class="text-2xl text-pink-500 font-bold border-solid border-2 border-red-500 bg-white p-2 hover:bg-red-300">
+        </form>
+    </main>
+</body>
+</html>
+<%- include('../partials/footer') -%>
