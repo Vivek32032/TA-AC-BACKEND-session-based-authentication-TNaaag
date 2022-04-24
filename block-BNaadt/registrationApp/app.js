@@ -36,11 +36,12 @@ app.use(session ({
   store : MongoStore.create({mongoUrl: 'mongodb://localhost/userRegistration' })
 }))
 
+app.use(flash());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // use flash to display message.
-app.use(flash());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -29,7 +29,7 @@ router.post('/register',function(req,res,next){
         return res.redirect('/users/register');
       }
     }
-     res.redirect('/users/login')
+     res.redirect('/users')
    })
 })
 
