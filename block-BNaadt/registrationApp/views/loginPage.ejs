@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login Page</title>
+</head>
+<body>
+<%- include('../partials/header') -%>
+    <main>
+        <form class="p-7 bg-green-300 mx-auto my-28 w-4/12" action="/users/login" method="POST">
+            <% if(error) { %>
+                <p class="text-red-500 "><%= error %></p>
+            <% } %>
+            <input class="mb-3 p-2" type="email" name="email" placeholder="Enter Email" required >
+            <input class="mb-3 p-2" type="password" name="password" minlength="6" placeholder="Enter Password" required>
+            <input class="mx-auto p-5 bg-red-700 text-white font-bold " type="submit" value="Login">
+        </form>
+    </main>
+</body>
+</html>
+<%- include('../partials/footer') -%>
