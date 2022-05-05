@@ -7,6 +7,7 @@ var flash = require('connect-flash')
 var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var articleRouter = require('./routes/articles')
 var MongoStore = require('connect-mongo')
 require('dotenv').config()
 const { default: mongoose } = require('mongoose');
@@ -40,6 +41,8 @@ app.use(flash());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/articles',articleRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
