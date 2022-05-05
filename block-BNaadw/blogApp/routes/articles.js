@@ -81,7 +81,7 @@ router.get('/:slug/likes', (req, res, next) => {
 // Delete Article
 router.get('/:slug/delete', (req, res, next) => {
     let givenSlug = req.params.slug;
-    Article.findByIdAndDelete({ slug: givenSlug }, (err, deletedArticle) => {
+    Article.findOneAndDelete({ slug: givenSlug }, (err, deletedArticle) => {
         if(err) return next(err);
         Comment.deleteMany({ articleId: deletedArticle._id }, (err, info) => {
         if(err) return next(err);
